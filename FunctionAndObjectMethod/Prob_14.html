@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+function calculatePrice(price, discount=10) {
+    // let totalPrice = price - (price * discount / 100);
+    let Promptprice = prompt(`Enter the price of the item`);
+    let Promptdiscount = prompt(`Enter the discount percentage`,10);
+    if(isNaN(Promptprice) || Promptprice <0) {
+        alert(`Please enter a valid number in Price'`);
+        return null;
+    
+    }else if(isNaN(Promptdiscount) || Promptdiscount <0) {
+        alert(`Please enter a valid number in Discount'`);
+        return null;
+    }
+    let totalPrice = Promptprice - (Promptprice * Promptdiscount / 100);
+    return totalPrice;
+}
+let finalPrice = calculatePrice(); // 80
+document.write(`The final price is: ${finalPrice}`);
+</script>
+

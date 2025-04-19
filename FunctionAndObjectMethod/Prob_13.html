@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function sumNumbers(...args) {
+        let sum = 0;
+        
+        for(let i = 0; i < args.length; i++) {
+            if (isNaN(args[i])) {
+                alert(`Please enter a valid number`);
+                return null;
+            }
+            sum += args[i];
+    }
+        return sum;
+}
+   let result= sumNumbers(1, 2, 3, 4, 5); // 15
+    document.write(`The sum is: ${result}`);
+</script> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sum Numbers</title>
+</head>
+<body>
+  <script>
+
+    function sumNumbers(...numbers) {
+      return numbers.reduce((sum, num) => sum + num, 0);
+    }
+
+
+    function collectAndSumNumbers() {
+      let numbers = [];
+
+      while (true) {
+        let input = prompt("Enter a number (or leave blank/cancel to finish):");
+
+        if (input === null || input.trim() === "") {
+          break; 
+        }
+
+        let num = parseFloat(input);
+
+        if (!isNaN(num)) {
+          numbers.push(num);
+        } else {
+          alert("Invalid number! Please try again.");
+        }
+      }
+
+      let total = sumNumbers(...numbers);
+      alert(`The total sum is: ${total}`);
+    }
+
+
+    collectAndSumNumbers();
+  </script>
+</body>
+</html>
