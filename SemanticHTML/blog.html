@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog Submission Page</title>
+</head>
+<body>
+
+  <header>
+    <h1>Submit a Blog Post</h1>
+  </header>
+
+  <main>
+    <section aria-labelledby="formTitle">
+      <h2 id="formTitle">Blog Submission Form</h2>
+
+      <form action="#" method="post">
+        
+    
+        <div>
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+
+    
+        <div>
+          <label for="category">Category:</label>
+          <select id="category" name="category" required>
+            <option value="">--Select Category--</option>
+            <option value="tech">Tech</option>
+            <option value="lifestyle">Lifestyle</option>
+            <option value="travel">Travel</option>
+          </select>
+        </div>
+
+    
+        <div>
+          <label for="content">Content:</label>
+          <textarea id="content" name="content" rows="6" required></textarea>
+        </div>
+
+        
+        <div>
+          <label for="author">Author Name:</label>
+          <input type="text" id="author" name="author" required />
+        </div>
+
+    
+        <fieldset>
+          <legend>Publication Status</legend>
+          <div>
+            <input type="radio" id="draft" name="status" value="draft" required />
+            <label for="draft">Draft</label>
+          </div>
+          <div>
+            <input type="radio" id="published" name="status" value="published" />
+            <label for="published">Published</label>
+          </div>
+        </fieldset>
+
+        <button type="submit">Submit Post</button>
+      </form>
+    </section>
+
+    <article aria-label="Sample blog article section">
+      <h2>Blog Preview (Coming Soon)</h2>
+      <p>This section can be used to preview submitted blogs in the future.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 My Blog CMS. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
