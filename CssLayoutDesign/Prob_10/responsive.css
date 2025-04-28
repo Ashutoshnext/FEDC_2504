@@ -1,0 +1,15 @@
+@media screen and (max-width:750px){
+    .child{
+        display: flex;
+        flex-direction: column;
+    }
+    .subchild_1,.subchild_2{
+        width: 100%;
+    }
+    .title{
+        display: block;
+    }
+    .subchild_2_title{
+        display: none;
+    }
+}

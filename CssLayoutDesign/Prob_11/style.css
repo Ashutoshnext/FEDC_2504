@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.container{
+    width: 100%;
+}
+nav{
+    width: 80%;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.menu{
+   
+    display: flex;
+    justify-content: space-around;
+    display: none;
+}
+.hamburger>div{
+border:2px solid black;
+width: 35px;
+margin: 5px 0;
+}
+div{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+

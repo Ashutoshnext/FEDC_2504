@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo">NavBar</div>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+        <nav>
+            <div>Home</div>
+            <div>Contact Us</div>
+            <div>Gallery</div>
+            <div>Download</div>
+            <div>About Us</div>
+        </nav>
+    </div>
+</body>
+
+</html>
+<script>
+    let hamburger = document.querySelector(".hamburger");
+    let nav = document.querySelector('nav');
+   
+    // nav.style.display="flex";
+    hamburger.addEventListener("click", function () {
+        if (nav.style.display === "block") {
+            nav.style.display = "none";
+            nav.style.marginLeft="200px";
+           
+
+        } else {
+            nav.style.display = "block";
+        }
+    });
+</script>

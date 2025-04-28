@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.container {
+    width: 30%;
+    height: 300px;
+    border: 1px solid rgb(188, 182, 182);
+
+    margin: 0 auto;
+}
+
+.row {
+    width: 80%;
+    height: 30px;
+    border: 1px solid rgb(181, 172, 172);
+    margin: 0px auto;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 2px 2px rgb(201, 200, 200);
+}
+
+.gridrow {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    margin: 10px auto;
+    border-radius: 8px;
+}
+
+.box {
+    height: 30px;
+    border-radius: 5px;
+    line-height: 30px;
+    border: 1px solid rgb(162, 158, 158);
+    box-shadow: 2px 2px rgb(201, 200, 200);
+    margin: 0 30px;
+    text-align: center;
+}
+.black{
+    background: #000;
+    color: white;
+}
+.red{
+    background-color: red;
+    color: white;
+}
