@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            margin: 0 auto;
+        }
+        input,button{
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h3>hello</h3>
+        <label for="">
+            Color Name:
+            <input type="text" placeholder="Enter Your Color Name" id="colorinput">
+        </label>
+        <label for="">Your Input:
+            <input type="text" placeholder="Enter Your Text" id="textinput">
+        </label>
+        <button id="changebtn">ChangeBackground</button>
+        <button id="updatebtn">UpdateText</button>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let containerbox=document.querySelector('.container');
+    let title=document.querySelector('h3');
+    let colorinput=document.querySelector('#colorinput');
+    let textinput=document.querySelector('#textinput');
+    let changebgbtn=document.querySelector('#changebtn')
+    let updatebtn=document.querySelector('#updatebtn')
+   changebgbtn.addEventListener('click',function(){
+   containerbox.style.background=colorinput.value;
+   console.log(containerbox);
+   })
+   updatebtn.addEventListener('click',function(){
+    title.textContent=textinput.value;
+   })
+
+</script>

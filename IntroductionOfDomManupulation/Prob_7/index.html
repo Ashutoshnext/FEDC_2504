@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 id="h1">title</h1>
+        <p>First page</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Non, eius modi. Iste dolore similique commodi? Unde, praesentium maxime? Nesciunt animi quasi similique!</p>
+    </div>
+</body>
+
+</html>
+<script>
+    let container = document.querySelector('.container')
+    let h1 = document.getElementById('h1');
+    let para = document.getElementsByTagName('p')
+
+container.style.backgroundColor="yellow";
+
+    h1.textContent = "Welcome to the DOM World!."
+    for(let i=0;i<para.length;i++){
+        para[i].style.color="blue";
+    }
+  
+    
+
+
+</script>

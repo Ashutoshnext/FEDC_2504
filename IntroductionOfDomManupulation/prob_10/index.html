@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 50%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        input,
+        button {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome <span id="greetname">Name</span></h1>
+        <label for="">User's Name:
+            <input type="text" placeholder="Enter Your UserName" id="username">
+        </label>
+        <label for="">Background Color:
+            <input type="text" placeholder="Enter Your Background Color" id="bgcolor">
+        </label>
+        <button id="savebtn">SavePreferences</button>
+    </div>
+</body>
+
+</html>
+<script>
+    let container = document.querySelector('.container');
+    let greetname = document.querySelector('#greetname');
+    let username = document.querySelector('#username');
+    let bgcolor = document.querySelector('#bgcolor');
+    let Savebtn = document.querySelector('#savebtn');
+    Savebtn.addEventListener('click', function () {
+        if (!username.value || !bgcolor.value) {
+            alert('Please fill both Inputfield!')
+        } else {
+            let obj = { userName: username.value, BgColor: bgcolor.value }
+            localStorage.setItem("user", JSON.stringify(obj))
+        }
+        window.location.reload(true);
+    })
+    let data = JSON.parse(localStorage.getItem('user'))
+
+    greetname.textContent = data.userName;
+    container.style.background = data.BgColor;
+</script>
