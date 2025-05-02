@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            padding: 15px;
+
+            grid-gap: 10px;
+            border: 2px solid black;
+
+        }
+
+        .cart {
+            width: 420px;
+            padding: 10px;
+            border: 1px solid red;
+        }
+
+        .cart>img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #080808;
+            color: red;
+            border-radius: 8px;
+            border: none;
+        }
+        p{
+            font-size: 20px;
+            font-weight: bold;
+            font-family:Arial, Helvetica, sans-serif;
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    let container = document.querySelector('.container');
+    fetch('https://fakestoreapi.com/products')
+        .then(res => res.json())
+        .then(data => getproduct(data))
+
+    function getproduct(product) {
+
+        for (let i = 0; i < product.length; i++) {
+            let div = document.createElement('div')
+            div.classList.add('cart')
+            let productimage = document.createElement('img');
+            let Title = document.createElement('h3');
+            let Price = document.createElement('p');
+            let button = document.createElement('button');
+            button.textContent = 'ViewDetails';
+
+            button.addEventListener('click',()=>{
+                let descriptionproduct=document.createElement('p')
+                descriptionproduct.textContent=`Description: ${product[i].description}`;
+                let categoryproduct=document.createElement('p')
+                categoryproduct.textContent=`Category:${product[i].category}`;
+                let ratingproduct=document.createElement('p')
+                ratingproduct.textContent=`Ration:${product[i].rating.rate}`;
+                div.append(descriptionproduct,categoryproduct,ratingproduct)
+            })
+           
+            productimage.src = product[i].image;
+            Title.textContent = product[i].title;
+            Price.textContent = product[i].price;
+            div.append(productimage, Title, Price, button)
+            container.append(div)
+
+           
+        }
+    }
+
+</script>

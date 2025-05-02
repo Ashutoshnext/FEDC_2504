@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            background-color: #b2abab;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+
+        }
+
+        .box {
+            width: 50%;
+        }
+
+        input {
+            width: 60%;
+            padding: 8px 15px;
+            outline: none;
+            border: none;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+        }
+
+        h3 {
+            color: rgb(113, 18, 7);
+            font-family: monospace;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <input type="text" id="cityname" placeholder="Enter Your CityName">
+            <button id="btnsubmit">submit</button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    let box = document.querySelector('.box')
+    let temp = document.getElementById('temperature')
+    let submitbtn = document.getElementById('btnsubmit')
+    submitbtn.addEventListener('click', async () => {
+        let inputCity = document.getElementById('cityname').value;
+        let response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${inputCity}&appid=9f8a8bda78a81121cb3e45d70758369a`)
+        let data = await response.json();
+        ShowTemp(data)
+
+    })
+
+    function ShowTemp(data) {
+        // console.log(data.main.humidity)
+        let name = document.createElement('h3');
+        let sunrise = document.createElement('h3')
+        let sunset = document.createElement('h3')
+        let temp = document.createElement('h3')
+        let humidity = document.createElement('h3')
+        name.textContent = data.name;
+        sunrise.textContent = `Bihar Sharif SunRiseTime : ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}`
+        sunset.textContent = `Bihar Sharif SunSetTime : ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}`
+        temp.textContent = `Temperature : ${(data.main.temp - 273.15)}°C`
+        humidity.textContent = `humidity : ${(data.main.humidity)}`
+
+        box.append(name, sunrise, sunset, temp,humidity)
+    }
+
+    // new Date(sunsetUnix * 1000).toLocaleTimeString()
+</script>
