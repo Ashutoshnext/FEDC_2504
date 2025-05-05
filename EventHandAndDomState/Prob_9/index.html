@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Calibri;
+        }
+        .container{
+            width: 50%;
+            border: 1px solid gray;
+            margin: 0 auto;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        button{
+            padding: 8px 12px;
+            margin: 0 auto;
+            margin: 10px 5px;
+        }
+        .todo{
+            background: rgb(234, 231, 231);
+            padding: 8px 15px;
+            margin: 10px;
+            border-radius: 8px;
+            display: flex;
+            /* justify-content: space-around; */
+        }
+       .todo> input{
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <div class="box">
+            <button>
+                fetch Todos
+            </button>
+        </div>
+        <div class="displayPage"></div>
+      <div class="todobox"></div>
+      
+  
+    </div>
+    
+</body>
+</html>
+<script src="./index.js"></script>

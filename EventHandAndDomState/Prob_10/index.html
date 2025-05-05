@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:monospace;
+        }
+
+        .container {
+            width: 100%;
+            padding: 10px;
+            margin: 0 auto;
+            background: #dbd7d7;
+
+        }
+
+        button {
+            padding: 8px 14px;
+
+        }
+
+        .todobox {
+            width: 100%;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(3, 32%);
+        grid-gap: 10px;
+        }
+
+        .UserCard {
+            width: 100%;
+            padding: 20px;
+            margin: 0 20px;
+            background: #2a839b;
+            background: linear-gradient(90deg, rgba(42, 131, 155, 1) 0%, rgba(53, 150, 87, 1) 24%,
+             rgba(87, 199, 133, 1) 58%, rgba(110, 202, 125, 1) 100%,
+              rgba(237, 221, 83, 1) 100%, rgba(237, 221, 83, 1) 100%);
+        }
+        .UserCard>h3,h4,p{
+            margin: 10px;
+            color: rgb(186, 229, 130);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <button>FetchUser</button>
+        </div>
+        <div class="paginationbox">
+
+        </div>
+        <div class="todobox">
+
+        </div>
+    </div>
+</body>
+
+</html>
+<script src="./index.js"></script>
